@@ -25,3 +25,27 @@ nmap <Leader>fg :execute "vimgrep /" . expand("<cword>") . "/j **/*"<Bar>cw<CR>
 " Wrapped lines goes down/up to next row, rather than next line in file.
 noremap j gj
 noremap k gk
+
+" Install Vim-Plug first. Github: https://github.com/junegunn/vim-plug
+" Specify a directory for plugins
+" " - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Initialize plugin system
+call plug#end()
+
+" key map for fzf
+nnoremap <silent> <C-p> :FZF -m<cr>
+nnoremap <silent> <space> :Buffers<cr>
+nmap ; :Tags<CR>
+
+" CTAGS
+function CreateCppTags(root)
+                let l:tags_path = a:root . "/tags"
+                let l:include_path = a:root . "/xxx"
+    let l:excludes=" --exclude=*.a --exclude=*.o --exclude=*.so --exclude=*.pb.cc --exclude=*.pb.h " . l:include_path . "/build " . l:include_path . "/logs "
+    exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
+endfunction
+nmap <silent> <F4> :call CreateCppTags("path")<CR>

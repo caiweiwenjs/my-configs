@@ -15,3 +15,5 @@ function gkill() {
 }
 
 
+# Install fzf first. Github: https://github.com/junegunn/fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
