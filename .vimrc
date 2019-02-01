@@ -1,5 +1,5 @@
 syntax enable
-colorscheme badwolf             " Download this colorcheme from https://github.com/sjl/badwolf
+colorscheme delek
 set clipboard=unnamed
 set number relativenumber
 set incsearch                   " search as characters are entered
