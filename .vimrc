@@ -39,6 +39,7 @@ call plug#end()
 " key map for fzf
 nnoremap <silent> <C-p> :FZF -m<cr>
 nnoremap <silent> <space> :Buffers<cr>
+nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
 
 " CTAGS
