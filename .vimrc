@@ -1,7 +1,7 @@
 syntax enable
 colorscheme delek
 set clipboard=unnamed
-set number relativenumber
+set relativenumber
 set incsearch                   " search as characters are entered
 set hlsearch                    " Highlight search terms
 set showmatch                   " highlight matching [{()}]
