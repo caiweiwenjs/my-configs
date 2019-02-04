@@ -51,10 +51,12 @@ nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
 
 " CTAGS
-function CreateCppTags(root)
-                let l:tags_path = a:root . "/tags"
-                let l:include_path = a:root . "/xxx"
-    let l:excludes=" --exclude=*.a --exclude=*.o --exclude=*.so --exclude=*.pb.cc --exclude=*.pb.h " . l:include_path . "/build " . l:include_path . "/logs "
-    exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
-endfunction
+if !exists('*CreateCppTags')
+  function CreateCppTags(root)
+                  let l:tags_path = a:root . "/tags"
+                  let l:include_path = a:root . "/xxx"
+      let l:excludes=" --exclude=*.a --exclude=*.o --exclude=*.so --exclude=*.pb.cc --exclude=*.pb.h " . l:include_path . "/build " . l:include_path . "/logs "
+      exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
+  endfunction
+endif 
 nmap <silent> <F4> :call CreateCppTags("path")<CR>
