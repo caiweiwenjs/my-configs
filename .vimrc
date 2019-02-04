@@ -25,6 +25,12 @@ nmap <Leader>fg :execute "vimgrep /" . expand("<cword>") . "/j **/*"<Bar>cw<CR>
 " Wrapped lines goes down/up to next row, rather than next line in file.
 noremap j gj
 noremap k gk
+" Edit my vim rc file
+noremap <leader>ev :vsplit $MYVIMRC<cr>
+noremap <leader>sv :source $MYVIMRC<cr>
+
+" Abbreviation for my email address
+iabbrev @@ caiweiwen@163.com
 
 " Install Vim-Plug first. Github: https://github.com/junegunn/vim-plug
 " Specify a directory for plugins
