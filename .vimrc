@@ -1,7 +1,8 @@
 syntax enable
 colorscheme delek
+set nocompatible
 set clipboard=unnamed
-set relativenumber
+set number relativenumber
 set incsearch                   " search as characters are entered
 set hlsearch                    " Highlight search terms
 set showmatch                   " highlight matching [{()}]
@@ -26,11 +27,21 @@ nmap <Leader>fg :execute "vimgrep /" . expand("<cword>") . "/j **/*"<Bar>cw<CR>
 noremap j gj
 noremap k gk
 " Edit my vim rc file
-noremap <leader>ev :vsplit $MYVIMRC<cr>
-noremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" Toggle relative number
+nnoremap <leader>trn :setlocal relativenumber!<cr>
+" Toggle number
+nnoremap <leader>tn :setlocal number!<cr>
 
 " Abbreviation for my email address
 iabbrev @@ caiweiwen@163.com
+
+augroup filetype_comment
+  autocmd!
+  autocmd FileType cpp :nnoremap <buffer> <leader>/ I//<esc>
+  autocmd FileType sh :nnoremap <buffer> <leader>/ I#<esc>
+augroup END
 
 " Install Vim-Plug first. Github: https://github.com/junegunn/vim-plug
 " Specify a directory for plugins
@@ -51,12 +62,13 @@ nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
 
 " CTAGS
-if !exists('*CreateCppTags')
-  function CreateCppTags(root)
-                  let l:tags_path = a:root . "/tags"
-                  let l:include_path = a:root . "/xxx"
-      let l:excludes=" --exclude=*.a --exclude=*.o --exclude=*.so --exclude=*.pb.cc --exclude=*.pb.h " . l:include_path . "/build " . l:include_path . "/logs "
-      exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
-  endfunction
-endif 
+function! CreateCppTags(root)
+                let l:tags_path = a:root . "/tags"
+                let l:include_path = a:root . "/xxx"
+    let l:excludes=" --exclude=*.a --exclude=*.o --exclude=*.so --exclude=*.pb.cc --exclude=*.pb.h " . l:include_path . "/build " . l:include_path . "/logs "
+    exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
+endfunction
 nmap <silent> <F4> :call CreateCppTags("path")<CR>
+
+
+
