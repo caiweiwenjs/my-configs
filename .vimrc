@@ -9,10 +9,12 @@ set showmatch                   " highlight matching [{()}]
 set cursorline                  " highlight current line 
 set nowrap                      " Do not wrap long lines
 set autoindent                  " Indent at the same level of the previous line
+filetype plugin indent on
 set shiftwidth=2                " Use indents of  spaces
 set expandtab                   " Tabs are spaces, not tabs
 set tabstop=2                   " An indentation every two columns
 set softtabstop=2               " Let backspace delete indent
+set backspace=indent,eol,start
 
 let mapleader=","               " leader is comma
 
@@ -41,6 +43,12 @@ augroup filetype_comment
   autocmd!
   autocmd FileType cpp :nnoremap <buffer> <leader>/ I//<esc>
   autocmd FileType sh :nnoremap <buffer> <leader>/ I#<esc>
+augroup END
+
+augroup folding
+  autocmd!
+  autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
+  autocmd Syntax c,cpp,vim,xml,html,xhtml normal! zR 
 augroup END
 
 " Install Vim-Plug first. Github: https://github.com/junegunn/vim-plug
