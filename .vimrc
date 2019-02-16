@@ -58,6 +58,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 
 " Initialize plugin system
@@ -68,6 +69,8 @@ nnoremap <silent> <C-p> :FZF -m<cr>
 nnoremap <silent> <space> :Buffers<cr>
 nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
+
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " CTAGS
 function! CreateCppTags(root)
