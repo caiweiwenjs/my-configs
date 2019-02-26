@@ -60,6 +60,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
+" Should install the_silver_searcher
 Plug 'rking/ag.vim'
 
 " Initialize plugin system
