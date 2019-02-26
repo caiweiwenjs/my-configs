@@ -73,6 +73,7 @@ nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
 
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nf :NERDTreeFind<CR>
 
 " CTAGS
 function! CreateCppTags(root)
