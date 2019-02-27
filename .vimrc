@@ -72,8 +72,14 @@ nnoremap <silent> <space> :Buffers<cr>
 nnoremap <silent> <C-h> :History:<cr>
 nmap ; :Tags<CR>
 
+" key map for NERDTree
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 nnoremap <silent> <leader>nf :NERDTreeFind<CR>
+
+" AG
+" override ag.vim's g:ag_prg, search for Cpp, Shell, Python and Markdown only
+cabbrev Ag Ag!
+let g:ag_prg = 'ag --vimgrep --cpp --shell --python --md'
 
 " CTAGS
 function! CreateCppTags(root)
