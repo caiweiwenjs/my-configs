@@ -5,6 +5,7 @@ set clipboard=unnamed
 set number relativenumber
 set incsearch                   " search as characters are entered
 set hlsearch                    " Highlight search terms
+hi Search ctermfg=Black
 set showmatch                   " highlight matching [{()}]
 set cursorline                  " highlight current line 
 set nowrap                      " Do not wrap long lines
