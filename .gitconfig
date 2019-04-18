@@ -1,0 +1,22 @@
+[alias]
+        diff = diff --color
+        co = checkout
+        cm = commit
+        st = status
+        br = branch
+        ll = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        df = diff --color
+        fo = fetch origin
+        bso = branch --set-upstream-to=origin/master
+        rom = rebase origin/master
+        sm = submodule
+[color]
+        status = auto
+        diff = auto
+        branch = auto
+        interactive = auto
+[core]
+        editor = /usr/bin/vim
+        autocrlf = false
+
