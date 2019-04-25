@@ -63,9 +63,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 " Should install the_silver_searcher
 Plug 'rking/ag.vim'
+Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
+
+" key map for fugitive
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gl :Git log<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gm :Gcommit --amend<cr>
+nnoremap <leader>ga :Gadd -p<cr>
+nnoremap <leader>gd :Gdiff<cr>
 
 " key map for fzf
 nnoremap <silent> <C-p> :FZF -m<cr>
