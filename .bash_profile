@@ -9,14 +9,12 @@ alias rm='rm -i'
 alias grep='grep --color'
 
 
-# for word
 function blue(){
-    echo -e "\033[42m\033[34m"$1"\033[0m"
+    echo -e "\033[42m\033[34m"$@"\033[0m"
 }
 
-# for word
 function yellow(){
-    echo -e "\033[33m"$1"\033[0m"
+    echo -e "\033[33m"$@"\033[0m"
 }
 
 function ipwd() {
