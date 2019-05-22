@@ -61,10 +61,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-" Should install the_silver_searcher
+" require the_silver_searcher installed
 Plug 'rking/ag.vim'
 Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-fugitive'
+" require clang-format command (3.4 or later) installed
+Plug 'rhysd/vim-clang-format'
+
 
 " Initialize plugin system
 call plug#end()
@@ -86,6 +89,9 @@ nmap ; :Tags<CR>
 " key map for NERDTree
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 nnoremap <silent> <leader>nf :NERDTreeFind<CR>
+
+" key map for vim-clang-format
+nnoremap <silent> <leader>cf :ClangFormat<CR>
 
 " AG
 " override ag.vim's g:ag_prg, search for Cpp, Shell, Python and Markdown only
