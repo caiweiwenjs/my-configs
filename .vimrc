@@ -67,6 +67,7 @@ Plug 'valloric/youcompleteme'
 Plug 'tpope/vim-fugitive'
 " require clang-format command (3.4 or later) installed
 Plug 'rhysd/vim-clang-format'
+Plug 'vim-airline/vim-airline'
 
 
 " Initialize plugin system
@@ -106,6 +107,10 @@ function! CreateCppTags(root)
     exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
 endfunction
 nmap <silent> <F4> :call CreateCppTags("path")<CR>
+
+
+
+
 
 
 
