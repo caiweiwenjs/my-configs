@@ -36,6 +36,16 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>trn :setlocal relativenumber!<cr>
 " Toggle number
 nnoremap <leader>tn :setlocal number!<cr>
+" Toggle paste
+set pastetoggle=<leader>p
+" Vertical resize 
+nnoremap <leader>> :vertical resize +10<cr>
+nnoremap <leader>< :vertical resize -10<cr>
+" auto insert }
+inoremap {<CR> {<CR>  <CR>}<up><right>
+" move line
+nnoremap <C-K> ddkP
+nnoremap <C-J> ddp
 
 " Abbreviation for my email address
 iabbrev @@ caiweiwen@163.com
@@ -107,10 +117,5 @@ function! CreateCppTags(root)
     exec ':!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ ' . l:excludes . ' -o ' . l:tags_path . ' ' . l:include_path
 endfunction
 nmap <silent> <F4> :call CreateCppTags("path")<CR>
-
-
-
-
-
 
 
