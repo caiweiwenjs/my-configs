@@ -38,6 +38,8 @@ nnoremap <leader>trn :setlocal relativenumber!<cr>
 nnoremap <leader>tn :setlocal number!<cr>
 " Toggle paste
 nnoremap <leader>p :set paste!<cr>
+" Toggle list mode
+nnoremap <leader>l :set list!<cr>
 " Vertical resize 
 nnoremap <leader>> :vertical resize +10<cr>
 nnoremap <leader>< :vertical resize -10<cr>
@@ -78,6 +80,7 @@ Plug 'tpope/vim-fugitive'
 " require clang-format command (3.4 or later) installed
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
 
 
 " Initialize plugin system
@@ -104,6 +107,31 @@ nnoremap <silent> <leader>nf :NERDTreeFind<CR>
 
 " key map for vim-clang-format
 nnoremap <silent> <leader>cf :ClangFormat<CR>
+
+" ALE
+nnoremap <silent> <leader>at :ALEToggle<CR>
+nnoremap <silent> <leader>ad :ALEDetail<CR>
+nnoremap <silent> <leader>ai :ALEInfo<CR>
+"nnoremap <silent> <leader>ap <Plug>(ale_previous_wrap)
+nmap <silent> <C-i> <Plug>(ale_next_wrap)
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {
+      \   'cpp': ['clang']
+      \}
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+let g:ale_cpp_clang_options = '
+      \ -std=c++14 -Wall
+      \ -I ./'
+
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" You can disable this option too
+" " if you don't want linters to run on opening a file
+" let g:ale_lint_on_enter = 0
 
 " AG
 " override ag.vim's g:ag_prg, search for Cpp, Shell, Python and Markdown only
