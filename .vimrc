@@ -37,7 +37,7 @@ nnoremap <leader>trn :setlocal relativenumber!<cr>
 " Toggle number
 nnoremap <leader>tn :setlocal number!<cr>
 " Toggle paste
-set pastetoggle=<leader>p
+nnoremap <leader>p :set paste!<cr>
 " Vertical resize 
 nnoremap <leader>> :vertical resize +10<cr>
 nnoremap <leader>< :vertical resize -10<cr>
@@ -89,7 +89,8 @@ nnoremap <leader>gl :Git log<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gm :Gcommit --amend<cr>
 nnoremap <leader>ga :Gadd -p<cr>
-nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gf :Gdiff<cr>
+nnoremap <leader>gd :Git diff<cr>
 
 " key map for fzf
 nnoremap <silent> <C-p> :FZF -m<cr>
