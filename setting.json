@@ -1,0 +1,46 @@
+{
+    "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "maven.executable.path": "/usr/local/bin/mvn",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home",
+    "java.configuration.maven.userSettings": "/Users/edward/.m2/settings.xml",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "editor.suggestSelection": "first",
+    "editor.renderControlCharacters": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.folding": true,
+    "files.encoding": "utf8",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "go.gopath": "/Users/edward/go", 
+    "go.goroot": "/usr/local/go",
+    "go.toolsGopath": "/usr/local/go/pkg/tool/darwin_amd64",
+    "go.useLanguageServer": false,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "go.alternateTools": {
+        "go-langserver": "bingo"
+    },
+    "go.languageServerFlags": ["--trace", "--format-style", "goimports"],
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "[sql]": {
+        "editor.defaultFormatter": "ms-mssql.mssql"
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.autoIndent": "advanced"
+    },
+    "[cpp]": {
+        "editor.tabSize": 2
+    },
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pipenvPath": "/usr/local/bin/pip3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true
+}
