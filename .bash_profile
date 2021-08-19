@@ -26,3 +26,12 @@ if [ -z "$TMUX" ]; then
     exec tmux new-session -A -s $session_name
 fi
 
+# FOR FZF: fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+
