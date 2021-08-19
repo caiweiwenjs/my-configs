@@ -34,4 +34,9 @@ fd() {
   cd "$dir"
 }
 
+# FOR bash-completion: configure bash-completion
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+
+
 
